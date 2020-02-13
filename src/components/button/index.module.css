@@ -1,0 +1,14 @@
+.button {
+  width: 150px;
+  height: 40px;
+  outline-width: 0;
+  font-size: 1rem;
+  background-color: rgba(52, 177, 14, 1);
+  transition-duration: 300ms;
+  border-width: 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgba(52, 177, 14, 0.8);
+}
