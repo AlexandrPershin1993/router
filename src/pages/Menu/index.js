@@ -8,14 +8,14 @@ class Menu {
   }
   render() {
     this._elem.innerHTML = '';
-    const div = document.createElement('div');
-    div.className = styles.container;
+    const nav = document.createElement('nav');
+    nav.className = styles.container;
 
     for(const {value, callback} of this._dataButtons){
-      this._button(div, value, callback);
+      this._button(nav, value, callback);
     }
 
-    this._elem.appendChild(div);
+    this._elem.appendChild(nav);
   }
 }
 

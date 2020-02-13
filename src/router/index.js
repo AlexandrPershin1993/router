@@ -49,6 +49,15 @@ class Router {
     }
   }
 
+  listen(name, fn) {
+    this._hooks[name] = fn;
+  }
+
+  fire(name, ...args) {
+    if(! (name in this._hooks)) return;
+    this._hooks[name].call(this, ...args);
+  }
+
   render(hash, onHistory) {
     if(! (hash in this._routes)) return;
     this._hash = hash;

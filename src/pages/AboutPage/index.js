@@ -1,16 +1,16 @@
 import styles from './index.module.css';
 
 class AboutPage {
-  constructor(idElem, content) {
-    this._idElem = idElem;
+  constructor(elem, content) {
+    this._elem = elem;
     this._content = content;
   }
   render() {
-    this._idElem.innerHTML = '';
+    this._elem.innerHTML = '';
     const p = document.createElement('p');
     p.className = styles.container;
     p.innerHTML = this._content;
-    this._idElem.appendChild(p);
+    this._elem.appendChild(p);
   }
 }
 
