@@ -5,7 +5,7 @@ const button = (elem, value, onClick) => {
   but.value = value;
   but.type = 'button';
   but.className = styles.button;
-  but.onClick = onClick;
+  but.onclick = onClick;
   elem.appendChild(but);
 }
 
