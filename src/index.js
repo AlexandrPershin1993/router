@@ -26,4 +26,4 @@ const router = new Router({
 
 router.render('menu');
 
-button(document.getElementById('root'), 'Назад');
+button(document.getElementById('root'), 'Назад', () => router.prev());
