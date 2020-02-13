@@ -37,6 +37,18 @@ class Router {
     this.render(nextHash, true);
   }
 
+  addRoute(route) {
+    if(Array.isArray(route)) {
+      this._routes = Object.assign({}, this._routes, ...route);
+      return;
+    }
+
+    this._routes = {
+      ...this._routes, 
+      ...route
+    }
+  }
+
   render(hash, onHistory) {
     if(! (hash in this._routes)) return;
     this._hash = hash;
