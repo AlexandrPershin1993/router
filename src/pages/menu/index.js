@@ -4,15 +4,20 @@ import { button } from '../../components/button';
 import Router from '../../router';
 import styles from './index.module.css';
 
-const menuTemplate = data => {
-  const nav = document.createElement('nav');
-  nav.className = styles.container;
+class Menu extends RootPage {
+  constructor(){
+    super();
+    this._data = data;
+  }
 
-  data.forEach( ({title, value}) => nav.appendChild( button(title, () => Router.setLocation(value) ) ) )
+  renderTemplate(data) {
+    const nav = document.createElement('nav');
+    nav.className = styles.container;
   
-  return nav;
+    data.forEach( ({title, value}) => nav.appendChild( button(title, () => Router.setLocation(value) ) ) )
+    
+    return nav;
+  }
 }
 
-const menu = new RootPage(menuTemplate, data);
-
-export default menu;
+export default Menu;
