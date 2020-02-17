@@ -3,12 +3,13 @@
   height: 40px;
   outline-width: 0;
   font-size: 1rem;
-  background-color: rgba(52, 177, 14, 1);
-  transition-duration: 300ms;
+  background: rgba(186, 215, 139, .3);
   border-width: 0;
   cursor: pointer;
+  margin-top: 10px;
+  color: #74924C;
 }
 
 .button:hover {
-  background-color: rgba(52, 177, 14, 0.8);
+  background: #BAD78B;
 }

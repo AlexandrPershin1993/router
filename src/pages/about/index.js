@@ -9,11 +9,18 @@ class About extends RootPage {
     this._data = data;
   }
 
-  renderTemplate(data) {
-    const p = document.createElement('p');
-    p.className = styles.container;
-    p.innerHTML = data;
-    return p;
+  renderTemplate({data, header}) {
+    const div = document.createElement('div');
+    div.className = styles.container;
+    div.innerHTML = `
+      <h1>
+        ${header}
+      </h1>
+      <p>
+        ${data}
+      </p>
+    `;
+    return div;
   }
 };
 

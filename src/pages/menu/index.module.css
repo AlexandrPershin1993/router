@@ -2,5 +2,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:rgb(241, 241, 189);
+  background: #D4E7EE;
+  overflow: hidden;
+  padding: 0;
+}
+
+.ul {
+  display: flex;
+  list-style: none; 
+  margin: 0 auto;
+  background: #D4E7EE;
+  overflow: hidden;
+  padding: 0;
+}
+
+.ul li{
+  display: block;
+}
+
+.aItem {
+  display: block;
+  padding: 1em;
+  border-right: 1px solid #ADC0CE;
+  background: rgba(173, 192, 206, .3);
+  color: #29838C;
+}
+
+.aItem:hover {
+  background: #ADC0CE;
 }

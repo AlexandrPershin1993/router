@@ -1,7 +1,5 @@
 import RootPage from '../RootPage';
 import data from './index.json';
-import { button } from '../../components/button';
-import Router from '../../router';
 import styles from './index.module.css';
 
 class Menu extends RootPage {
@@ -10,12 +8,25 @@ class Menu extends RootPage {
     this._data = data;
   }
 
+  renderMenuItem(title, value) {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <a href='#${value}' class=${styles.aItem}>
+        ${title}
+      </a>
+    `;
+    return li;
+  }
+
   renderTemplate(data) {
     const nav = document.createElement('nav');
     nav.className = styles.container;
-  
-    data.forEach( ({title, value}) => nav.appendChild( button(title, () => Router.setLocation(value) ) ) )
-    
+    const ul = document.createElement('ul');
+    ul.className = styles.ul; 
+
+    data.forEach( ({title, value}) => ul.appendChild( this.renderMenuItem(title, value) ) );
+
+    nav.appendChild(ul);
     return nav;
   }
 }

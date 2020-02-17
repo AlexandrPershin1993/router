@@ -1,3 +1,10 @@
 body {
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Lora', serif;
+  transition: .5s linear;
 }

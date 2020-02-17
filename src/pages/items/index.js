@@ -16,7 +16,7 @@ class Items extends RootPage {
     };
   }
 
-  productItem({name, srcImg, quantity, price}, images) {
+  renderProductItem({name, srcImg, quantity, price}, images) {
     const li = document.createElement('li');
     li.className = styles.containerItem;
     li.innerHTML = `
@@ -25,11 +25,11 @@ class Items extends RootPage {
       </div>
       <img class=${styles.imgItem} src=${images[srcImg]}>
       <ul class=${styles.dataUlItem}>
-        <li class=${styles.dataLiItem}>
-          Колличество: ${quantity}
-        </li>
-        <li class=${styles.dataLiItem}>
+        <li class=${styles.priceItem}>
           Цена: ${price} руб.
+        </li>
+        <li class=${styles.quantityItem}>
+          Колличество: ${quantity}
         </li>
       </ul>
     `
@@ -41,7 +41,7 @@ class Items extends RootPage {
     ul.className = styles.container;
   
     for(let i = 1; i <= total; i++) {
-      ul.appendChild(this.productItem(items[i], this._images));
+      ul.appendChild(this.renderProductItem(items[i], this._images));
     }
     
     return ul;
