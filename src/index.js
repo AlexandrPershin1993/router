@@ -1,17 +1,19 @@
 import Router from './router';
-import aboutPage from './pages/aboutPage';
-import menuPage from './pages/menuPage';
-import itemsPage from './pages/itemsPage';
-import { buttonTemplate } from './template/buttonTemplate';
+import about from './pages/about';
+import menu from './pages/menu';
+import items from './pages/items';
+import { button } from './components/button';
 import './index.css';
 
-Router.addRoute({
-  'about': aboutPage,
-  'menu': menuPage,
-  'items': itemsPage
+const router = new Router();
+
+router.addRoute({
+  'about': about,
+  'menu': menu,
+  'items': items
 });
 
 Router.setLocation('menu');
 
-const buttonPrev = buttonTemplate('Назад', () => Router.prev());
+const buttonPrev = button('Назад', () => router.prev());
 document.getElementById('root').appendChild(buttonPrev);

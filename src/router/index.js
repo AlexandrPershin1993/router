@@ -9,9 +9,10 @@ class Router {
     this._indexHistory = -1;
     this._statusHistory = false;
     this.render = this.render.bind(this);
+    window.addEventListener("hashchange", this.render, false);
   }
   
-  setLocation(hash) {
+   static setLocation(hash) {
     const url = new URL(window.location);
     url.hash = hash;
     window.location = url.toString();
@@ -31,7 +32,7 @@ class Router {
     const indexHistory = this._indexHistory - n;
     if(0 > indexHistory) return;
     this._indexHistory = indexHistory;
-    this.setLocation(this._history[this._indexHistory]);
+    Router.setLocation(this._history[this._indexHistory]);
     this._statusHistory = true;
   }
 
@@ -40,7 +41,7 @@ class Router {
     const lastIndexHistory = this._history.length -1;
     if(lastIndexHistory < indexHistory) return;
     this._indexHistory = indexHistory;
-    this.setLocation(this._history[this._indexHistory]);
+    Router.setLocation(this._history[this._indexHistory]);
     this._statusHistory = true;
   }
 
@@ -72,16 +73,10 @@ class Router {
       this._history.length = this._indexHistory;
       this._history.push(hash);
     }
+    
     this._statusHistory = false;
     this._routes[hash].render();
   }
-
-  addEventListenerRouter(event, handler) {
-    
-  }
 }
 
-const router = new Router();
-window.addEventListener("hashchange", router.render, false);
-
-export default router;
+export default Router;
