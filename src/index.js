@@ -1,13 +1,13 @@
 import Router from './router';
 import aboutPage from './pages/aboutPage';
-import menu from './pages/menu';
+import menuPage from './pages/menuPage';
 import itemsPage from './pages/itemsPage';
 import { buttonTemplate } from './template/buttonTemplate';
 import './index.css';
 
 Router.addRoute({
   'about': aboutPage,
-  'menu': menu,
+  'menu': menuPage,
   'items': itemsPage
 });
 
