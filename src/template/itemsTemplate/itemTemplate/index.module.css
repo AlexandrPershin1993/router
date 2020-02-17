@@ -1,0 +1,33 @@
+.containerItem {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .imgItem {
+    height: 200px;
+  }
+  
+  .dataUlItem {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+  }
+  
+  .dataLiItem {
+    display: block;
+    font-size: 1.2rem;
+  }
+  
+  .nameItem {
+    font-size: 1.3rem;
+    text-align: center;
+  }

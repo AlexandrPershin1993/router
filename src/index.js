@@ -1,29 +1,17 @@
 import Router from './router';
-import AboutPage from './pages/AboutPage';
-import { aboutContent } from './pagesContent/about';
-import Menu from './pages/Menu';
-import ItemsPage from './pages/ItemsPage';
-import { itemsData } from './pagesContent/items';
-import button from './components/button';
+import aboutPage from './pages/aboutPage';
+import menu from './pages/menu';
+import itemsPage from './pages/itemsPage';
+import { buttonTemplate } from './template/buttonTemplate';
 import './index.css';
 
-const dataMenu = [
-  {
-    value: 'Товары', 
-    callback: () => router.render('items')
-  },
-  {
-    value: 'О нас', 
-    callback: () => router.render('about')
-  }
-];
-
-const router = new Router({
-  'about': new AboutPage(document.getElementById('content'), aboutContent),
-  'menu': new Menu(document.getElementById('content'), button, dataMenu),
-  'items': new ItemsPage(document.getElementById('content'), itemsData)
+Router.addRoute({
+  'about': aboutPage,
+  'menu': menu,
+  'items': itemsPage
 });
 
-router.render('menu');
+Router.setLocation('menu');
 
-button(document.getElementById('root'), 'Назад', () => router.prev());
+const buttonPrev = buttonTemplate('Назад', () => Router.prev());
+document.getElementById('root').appendChild(buttonPrev);
